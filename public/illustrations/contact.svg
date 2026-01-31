@@ -1,0 +1,55 @@
+<svg viewBox="0 0 400 350" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <circle cx="200" cy="175" r="150" fill="#3b82f6" fill-opacity="0.03"/>
+  
+  <!-- Envelope -->
+  <g transform="translate(80, 80)">
+    <rect x="0" y="40" width="240" height="160" rx="16" fill="#3b82f6"/>
+    <path d="M0 56 L120 140 L240 56" stroke="#60a5fa" stroke-width="4" fill="none"/>
+    <path d="M0 200 L80 140" stroke="#60a5fa" stroke-width="3" fill="none"/>
+    <path d="M240 200 L160 140" stroke="#60a5fa" stroke-width="3" fill="none"/>
+  </g>
+  
+  <!-- Letter -->
+  <g transform="translate(110, 60)">
+    <rect x="0" y="0" width="180" height="120" rx="8" fill="#f8fafc"/>
+    <rect x="20" y="20" width="100" height="8" rx="4" fill="#3b82f6"/>
+    <rect x="20" y="40" width="140" height="6" rx="3" fill="#94a3b8"/>
+    <rect x="20" y="55" width="120" height="6" rx="3" fill="#94a3b8"/>
+    <rect x="20" y="70" width="100" height="6" rx="3" fill="#94a3b8"/>
+    <rect x="20" y="90" width="60" height="20" rx="6" fill="#3b82f6"/>
+    <text x="30" y="104" fill="white" font-size="10" font-weight="bold">Send</text>
+  </g>
+  
+  <!-- Chat Bubbles -->
+  <g transform="translate(280, 200)">
+    <rect x="0" y="0" width="80" height="50" rx="12" fill="#10b981"/>
+    <rect x="10" y="12" width="50" height="6" rx="3" fill="white" fill-opacity="0.9"/>
+    <rect x="10" y="24" width="40" height="6" rx="3" fill="white" fill-opacity="0.7"/>
+    <rect x="10" y="36" width="30" height="6" rx="3" fill="white" fill-opacity="0.5"/>
+    <polygon points="60,50 70,50 65,60" fill="#10b981"/>
+  </g>
+  
+  <!-- Phone Icon -->
+  <g transform="translate(40, 220)">
+    <rect x="0" y="0" width="50" height="80" rx="10" fill="#f59e0b"/>
+    <rect x="5" y="10" width="40" height="55" rx="4" fill="#1e293b"/>
+    <circle cx="25" cy="72" r="4" fill="#fbbf24"/>
+    <rect x="10" y="20" width="30" height="4" rx="2" fill="#3b82f6"/>
+    <rect x="10" y="28" width="25" height="3" rx="1.5" fill="#64748b"/>
+    <rect x="10" y="35" width="20" height="3" rx="1.5" fill="#64748b"/>
+  </g>
+  
+  <!-- Floating Elements -->
+  <circle cx="350" cy="80" r="5" fill="#3b82f6" fill-opacity="0.5"/>
+  <circle cx="50" cy="150" r="4" fill="#10b981" fill-opacity="0.5"/>
+  <circle cx="370" cy="300" r="6" fill="#f59e0b" fill-opacity="0.4"/>
+  
+  <!-- Connection Dots -->
+  <circle cx="100" cy="180" r="3" fill="#3b82f6"/>
+  <circle cx="300" cy="180" r="3" fill="#3b82f6"/>
+  <line x1="103" y1="180" x2="297" y2="180" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4 3"/>
+  
+  <!-- Stars -->
+  <path d="M340 140 L342 146 L348 146 L343 150 L345 156 L340 152 L335 156 L337 150 L332 146 L338 146 Z" fill="#fbbf24"/>
+</svg>

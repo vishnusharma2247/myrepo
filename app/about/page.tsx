@@ -1,79 +1,108 @@
 'use client';
 
 import Footer from '@/components/Footer';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { RiFlagLine, RiHeartLine, RiLightbulbLine, RiTeamLine } from 'react-icons/ri';
+import { RiFlagLine, RiHeartLine, RiLightbulbLine, RiTeamLine, RiCheckLine, RiAwardLine, RiGlobalLine, RiRocketLine } from 'react-icons/ri';
+
+const values = [
+  { icon: RiFlagLine, title: 'Mission-Driven', desc: 'Practical, industry-relevant learning that impacts careers.' },
+  { icon: RiHeartLine, title: 'Community First', desc: '50,000+ engineers supporting each other.' },
+  { icon: RiLightbulbLine, title: 'Innovation', desc: 'Constantly evolving curriculum to match industry.' },
+  { icon: RiTeamLine, title: 'Expert Mentorship', desc: 'Guidance from top tech company professionals.' },
+];
+
+const stats = [
+  { value: '50K+', label: 'Engineers' },
+  { value: '200+', label: 'Mentors' },
+  { value: '95%', label: 'Completion' },
+  { value: '4.9/5', label: 'Rating' },
+];
+
+const milestones = [
+  { year: '2021', title: 'Founded', desc: 'Started with a vision to bridge learning and careers.' },
+  { year: '2022', title: '10K Learners', desc: 'Reached our first major milestone.' },
+  { year: '2023', title: 'Enterprise', desc: 'Partnered with Fortune 500 companies.' },
+  { year: '2024', title: 'Global', desc: 'Expanded to 50+ countries.' },
+];
 
 export default function AboutPage() {
-  const values = [
-    {
-      icon: RiFlagLine,
-      title: 'Mission-Driven',
-      description: 'Empowering engineers through practical, industry-relevant learning experiences.',
-    },
-    {
-      icon: RiHeartLine,
-      title: 'Community First',
-      description: 'Building a supportive community where engineers grow and succeed together.',
-    },
-    {
-      icon: RiLightbulbLine,
-      title: 'Innovation',
-      description: 'Constantly evolving our platform to match industry demands and trends.',
-    },
-    {
-      icon: RiTeamLine,
-      title: 'Expert Mentorship',
-      description: 'Connecting learners with industry professionals for personalized guidance.',
-    },
-  ];
-
   return (
     <main className="min-h-screen bg-[var(--bg-primary)]">
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-[var(--text-primary)]">
-              About <span className="text-[var(--accent-primary)]">CredPath</span>
-            </h1>
-            <p className="text-xl text-[var(--text-secondary)] mb-8">
-              Our mission is to transform how engineers learn and grow their careers.
-            </p>
-          </motion.div>
+      {/* Hero */}
+      <section className="page-hero pb-6 sm:pb-8">
+        <div className="max-container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }} 
+              animate={{ opacity: 1, y: 0 }} 
+              transition={{ duration: 0.5 }}
+              className="text-center lg:text-left"
+            >
+              <span className="inline-block px-2.5 sm:px-3 py-1 text-xs font-medium rounded-full bg-[var(--accent-primary)] text-white mb-3 sm:mb-4">
+                Our Story
+              </span>
+              <h1 className="page-title">About <span className="text-[var(--accent-primary)]">CredPath</span></h1>
+              <p className="page-desc max-w-lg mx-auto lg:mx-0 mb-4 sm:mb-6">
+                We transform how engineers learn through task-based internships, 
+                expert mentorship, and industry-recognized certifications.
+              </p>
+              
+              {/* Quick Stats */}
+              <div className="grid grid-cols-4 gap-2 sm:gap-4">
+                {stats.map((stat, idx) => (
+                  <div key={idx} className="text-center p-2 sm:p-3 rounded-lg bg-[var(--bg-secondary)]">
+                    <div className="text-base sm:text-xl font-bold text-[var(--accent-primary)]">{stat.value}</div>
+                    <div className="text-xs text-[var(--text-secondary)]">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="hidden md:block"
+            >
+              <div className="illustration-container">
+                <Image src="/illustrations/about.svg" alt="About CredPath" fill className="object-contain" />
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-secondary)]">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-[var(--text-primary)]">Our Core Values</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Values */}
+      <section className="section-spacing bg-[var(--bg-secondary)] px-4 sm:px-6 lg:px-8">
+        <div className="max-container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center section-header"
+          >
+            <h2 className="section-title">Our Core Values</h2>
+            <p className="section-desc mx-auto">What drives us every day</p>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
             {values.map((value, idx) => {
-              const IconComponent = value.icon;
+              const Icon = value.icon;
               return (
                 <motion.div
                   key={idx}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: idx * 0.1, duration: 0.6 }}
-                  viewport={{ once: true, margin: '-100px' }}
-                  className="card"
+                  transition={{ delay: idx * 0.1, duration: 0.4 }}
+                  viewport={{ once: true }}
+                  className="card-standard flex gap-3 sm:gap-4"
                 >
-                  <div className="flex gap-4">
-                    <div className="flex-shrink-0">
-                      <div className="flex items-center justify-center h-12 w-12 rounded-lg bg-[var(--accent-primary)]/10">
-                        <IconComponent className="h-6 w-6 text-[var(--accent-primary)]" />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-[var(--text-primary)]">{value.title}</h3>
-                      <p className="mt-2 text-[var(--text-secondary)]">{value.description}</p>
-                    </div>
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(59, 130, 246, 0.1)' }}>
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-[var(--accent-primary)]" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="text-sm sm:text-base font-semibold text-[var(--text-primary)] mb-1">{value.title}</h3>
+                    <p className="text-xs sm:text-sm text-[var(--text-secondary)]">{value.desc}</p>
                   </div>
                 </motion.div>
               );
@@ -82,25 +111,86 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-8 text-[var(--text-primary)]">Our Story</h2>
-          <div className="space-y-6 text-[var(--text-secondary)] leading-relaxed">
-            <p>
-              CredPath was founded on a simple observation: many brilliant engineers struggle to bridge the gap between
-              learning and career growth. Traditional courses teach concepts, but they don't always translate to
-              real-world success.
-            </p>
-            <p>
-              We decided to create a platform that combines hands-on project work, expert mentorship, and industry
-              recognition. Every learner deserves guidance from someone who's been there, built that, and succeeded at
-              it.
-            </p>
-            <p>
-              Today, thousands of engineers have transformed their careers through CredPath. They've landed roles at
-              leading companies, built impressive portfolios, and joined a supportive community of peers.
-            </p>
+      {/* Timeline */}
+      <section className="section-spacing px-4 sm:px-6 lg:px-8">
+        <div className="max-container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="text-center section-header"
+          >
+            <h2 className="section-title">Our Journey</h2>
+            <p className="section-desc mx-auto">Key milestones in our growth</p>
+          </motion.div>
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+            {milestones.map((milestone, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1, duration: 0.4 }}
+                viewport={{ once: true }}
+                className="card-standard text-center"
+              >
+                <div className="text-xl sm:text-2xl font-bold text-[var(--accent-primary)] mb-1 sm:mb-2">{milestone.year}</div>
+                <h3 className="text-xs sm:text-sm font-semibold text-[var(--text-primary)] mb-1">{milestone.title}</h3>
+                <p className="text-xs text-[var(--text-secondary)] hidden sm:block">{milestone.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What Makes Us Different */}
+      <section className="section-spacing-sm bg-[var(--bg-secondary)] px-4 sm:px-6 lg:px-8">
+        <div className="max-container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center lg:text-left"
+            >
+              <h2 className="section-title mb-3 sm:mb-4">What Makes Us Different</h2>
+              <p className="text-xs sm:text-sm text-[var(--text-secondary)] mb-4 sm:mb-6 max-w-lg mx-auto lg:mx-0">
+                Unlike traditional courses, we believe in learning by doing. 
+                Every task is a real-world challenge that prepares you for your career.
+              </p>
+              <div className="space-y-2 sm:space-y-3">
+                {['Task-based learning, not passive videos', 'Expert mentors from FAANG', 'Industry-recognized certifications', 'Direct job placement support'].map((item, idx) => (
+                  <div key={idx} className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm text-[var(--text-primary)] justify-center lg:justify-start">
+                    <RiCheckLine className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-2 gap-3 sm:gap-4"
+            >
+              {[
+                { icon: RiAwardLine, title: 'Certified', desc: 'Industry Recognition' },
+                { icon: RiGlobalLine, title: '50+ Countries', desc: 'Global Community' },
+                { icon: RiTeamLine, title: '200+ Mentors', desc: 'Expert Network' },
+                { icon: RiRocketLine, title: 'Fast Track', desc: 'Career Growth' },
+              ].map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="card-standard text-center">
+                    <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-[var(--accent-primary)] mx-auto mb-1 sm:mb-2" />
+                    <div className="text-sm sm:text-base font-bold text-[var(--text-primary)]">{item.title}</div>
+                    <div className="text-xs text-[var(--text-secondary)]">{item.desc}</div>
+                  </div>
+                );
+              })}
+            </motion.div>
           </div>
         </div>
       </section>

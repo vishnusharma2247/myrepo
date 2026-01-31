@@ -1,24 +1,34 @@
+'use client';
+
 import Footer from '@/components/Footer';
 import CoursesSection from '@/components/CoursesSection';
-
-export const metadata = {
-  title: 'Certification Paths | CredPath',
-  description: 'Explore our comprehensive certification paths in AI, ML, Cloud Computing, DevOps, IoT, and Cryptography.',
-};
+import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export default function CoursesPage() {
   return (
     <main className="min-h-screen bg-[var(--bg-primary)]">
-      <div className="pt-32 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-[var(--text-primary)]">
-            All Certification <span className="text-[var(--accent-primary)]">Paths</span>
-          </h1>
-          <p className="text-xl text-[var(--text-secondary)]">
-            Choose from our industry-designed certification paths and start your journey today.
-          </p>
-        </div>
-      </div>
+      {/* Hero */}
+      {/*<section className="page-hero">*/}
+      {/*  <div className="max-container">*/}
+      {/*    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">*/}
+      {/*      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>*/}
+      {/*        <h1 className="page-title">Certification <span className="text-[var(--accent-primary)]">Paths</span></h1>*/}
+      {/*        <p className="page-desc max-w-md">Industry-designed paths to transform your career.</p>*/}
+      {/*      </motion.div>*/}
+      {/*      <motion.div*/}
+      {/*        initial={{ opacity: 0, x: 20 }}*/}
+      {/*        animate={{ opacity: 1, x: 0 }}*/}
+      {/*        transition={{ duration: 0.5, delay: 0.2 }}*/}
+      {/*        className="hidden lg:block"*/}
+      {/*      >*/}
+      {/*        <div className="illustration-container">*/}
+      {/*          <Image src="/illustrations/courses.svg" alt="Courses" fill className="object-contain" />*/}
+      {/*        </div>*/}
+      {/*      </motion.div>*/}
+      {/*    </div>*/}
+      {/*  </div>*/}
+      {/*</section>*/}
       <CoursesSection />
       <Footer />
     </main>

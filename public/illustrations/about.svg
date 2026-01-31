@@ -1,0 +1,69 @@
+<svg viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <circle cx="250" cy="200" r="180" fill="#3b82f6" fill-opacity="0.03"/>
+  
+  <!-- Team Members -->
+  <!-- Person 1 (Center) -->
+  <g transform="translate(200, 100)">
+    <circle cx="50" cy="50" r="45" fill="#3b82f6"/>
+    <circle cx="50" cy="50" r="38" fill="#fbbf24"/>
+    <circle cx="42" cy="46" r="4" fill="#1e293b"/>
+    <circle cx="58" cy="46" r="4" fill="#1e293b"/>
+    <path d="M42 58 Q50 66 58 58" stroke="#1e293b" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <rect x="20" y="100" width="60" height="80" rx="15" fill="#3b82f6"/>
+  </g>
+  
+  <!-- Person 2 (Left) -->
+  <g transform="translate(60, 150)">
+    <circle cx="45" cy="45" r="40" fill="#10b981"/>
+    <circle cx="45" cy="45" r="33" fill="#fbbf24"/>
+    <circle cx="38" cy="42" r="3" fill="#1e293b"/>
+    <circle cx="52" cy="42" r="3" fill="#1e293b"/>
+    <path d="M38 52 Q45 58 52 52" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <rect x="18" y="90" width="54" height="70" rx="12" fill="#10b981"/>
+  </g>
+  
+  <!-- Person 3 (Right) -->
+  <g transform="translate(340, 150)">
+    <circle cx="45" cy="45" r="40" fill="#f59e0b"/>
+    <circle cx="45" cy="45" r="33" fill="#fbbf24"/>
+    <circle cx="38" cy="42" r="3" fill="#1e293b"/>
+    <circle cx="52" cy="42" r="3" fill="#1e293b"/>
+    <path d="M38 52 Q45 58 52 52" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <rect x="18" y="90" width="54" height="70" rx="12" fill="#f59e0b"/>
+  </g>
+  
+  <!-- Mission Flag -->
+  <g transform="translate(380, 60)">
+    <rect x="0" y="0" width="8" height="100" rx="2" fill="#64748b"/>
+    <path d="M8 10 L70 10 L60 35 L70 60 L8 60 Z" fill="#3b82f6"/>
+    <text x="20" y="40" fill="white" font-size="14" font-weight="bold">MISSION</text>
+  </g>
+  
+  <!-- Vision Lightbulb -->
+  <g transform="translate(40, 50)">
+    <circle cx="30" cy="30" r="25" fill="#fbbf24"/>
+    <rect x="20" y="55" width="20" height="15" rx="4" fill="#d97706"/>
+    <line x1="30" y1="0" x2="30" y2="-15" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+    <line x1="10" y1="10" x2="0" y2="0" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+    <line x1="50" y1="10" x2="60" y2="0" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Connection Lines (Team Unity) -->
+  <path d="M150 220 Q250 280 350 220" stroke="#3b82f6" stroke-width="3" stroke-dasharray="8 4" fill="none" opacity="0.4"/>
+  
+  <!-- Values Icons -->
+  <g transform="translate(200, 320)">
+    <rect x="0" y="0" width="100" height="40" rx="8" fill="#3b82f6" fill-opacity="0.1"/>
+    <text x="20" y="26" fill="#3b82f6" font-size="14" font-weight="bold">VALUES</text>
+  </g>
+  
+  <!-- Floating Elements -->
+  <circle cx="450" cy="300" r="5" fill="#3b82f6" fill-opacity="0.4"/>
+  <circle cx="30" cy="300" r="4" fill="#10b981" fill-opacity="0.4"/>
+  <circle cx="480" cy="200" r="6" fill="#f59e0b" fill-opacity="0.4"/>
+  
+  <!-- Stars -->
+  <path d="M120" y="80 L122 86 L128 86 L123 90 L125 96 L120 92 L115 96 L117 90 L112 86 L118 86 Z" fill="#fbbf24"/>
+  <path d="M450 130 L452 136 L458 136 L453 140 L455 146 L450 142 L445 146 L447 140 L442 136 L448 136 Z" fill="#fbbf24" fill-opacity="0.8"/>
+</svg>

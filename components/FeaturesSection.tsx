@@ -1,106 +1,74 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import {
-  RiBookOpenLine,
-  RiBriefcaseLine,
-  RiTeamLine,
-  RiAwardLine,
-} from 'react-icons/ri';
+import Image from 'next/image';
+import { RiBookOpenLine, RiBriefcaseLine, RiTeamLine, RiAwardLine } from 'react-icons/ri';
+
+const features = [
+  { icon: RiBookOpenLine, title: 'Structured Learning', desc: 'Lifetime access to all materials' },
+  { icon: RiBriefcaseLine, title: 'Industry Projects', desc: 'Build a professional portfolio' },
+  { icon: RiTeamLine, title: 'Mentorship', desc: '1-on-1 expert guidance' },
+  { icon: RiAwardLine, title: 'Certifications', desc: 'Industry-recognized credentials' },
+];
 
 const FeaturesSection = () => {
-  const features = [
-    {
-      icon: RiBookOpenLine,
-      title: 'Structured Learning',
-      description: 'Comprehensive modules with lifetime access to all course materials and updates.',
-    },
-    {
-      icon: RiBriefcaseLine,
-      title: 'Industry Projects',
-      description: 'Real-world challenges that build a professional portfolio employers value.',
-    },
-    {
-      icon: RiTeamLine,
-      title: 'Mentorship',
-      description: 'One-on-one guidance from experienced professionals in top tech companies.',
-    },
-    {
-      icon: RiAwardLine,
-      title: 'Certifications',
-      description: 'Industry-recognized credentials that boost your career prospects.',
-    },
-  ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.08,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6 },
-    },
-  };
-
   return (
-    <section className="w-full py-20 md:py-28 bg-[var(--bg-secondary)] px-4 sm:px-6 lg:px-8">
-      <div className="w-full max-w-7xl mx-auto">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: '-100px' }}
-          className="text-center mb-16 md:mb-20"
-        >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] mb-5">
-            Why Choose CredPath?
-          </h2>
-          <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
-            Everything you need to advance your engineering career
-          </p>
-        </motion.div>
+    <section className="w-full section-spacing bg-[var(--bg-secondary)] px-4 sm:px-6 lg:px-8">
+      <div className="max-container">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
+          {/* Left - Illustration */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="hidden md:block"
+          >
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+              className="illustration-container"
+            >
+              <Image src="/illustrations/features.svg" alt="Features" fill className="object-contain" />
+            </motion.div>
+          </motion.div>
 
-        {/* Features Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-100px' }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
-        >
-          {features.map((feature, idx) => {
-            const IconComponent = feature.icon;
-            return (
-              <motion.div key={idx} variants={itemVariants}>
-                <div className="h-full p-8 rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-color)] hover:border-[var(--accent-primary)] hover:shadow-lg transition-all duration-300 flex flex-col">
-                  {/* Icon */}
-                  <div className="w-16 h-16 rounded-xl bg-[var(--accent-primary)]/10 flex items-center justify-center mb-6">
-                    <IconComponent className="w-8 h-8 text-[var(--accent-primary)]" />
-                  </div>
+          {/* Right - Content */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="section-header text-center md:text-left"
+            >
+              <h2 className="section-title">Why Choose CredPath?</h2>
+              <p className="section-desc mx-auto md:mx-0">Everything you need to advance your career</p>
+            </motion.div>
 
-                  {/* Content */}
-                  <h3 className="text-xl font-bold text-[var(--text-primary)] mb-3">
-                    {feature.title}
-                  </h3>
-                  <p className="text-base text-[var(--text-secondary)] leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              {features.map((feature, idx) => {
+                const Icon = feature.icon;
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: idx * 0.1, duration: 0.4 }}
+                    viewport={{ once: true }}
+                    className="card-feature"
+                  >
+                    <div className="icon-box mb-2 sm:mb-3">
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--accent-primary)]" />
+                    </div>
+                    <h3 className="text-xs sm:text-sm font-semibold text-[var(--text-primary)] mb-1">{feature.title}</h3>
+                    <p className="text-xs text-[var(--text-secondary)] hidden sm:block">{feature.desc}</p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

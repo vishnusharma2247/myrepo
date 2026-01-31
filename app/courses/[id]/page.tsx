@@ -1,4 +1,3 @@
-import Footer from '@/components/Footer';
 import CourseDetail from '@/components/CourseDetail';
 import { notFound } from 'next/navigation';
 
@@ -8,7 +7,7 @@ interface CoursePageProps {
   }>;
 }
 
-const validCourseIds = ['ml', 'ai', 'cloud', 'devops', 'iot', 'crypto'];
+const validCourseIds = ['ai', 'ml', 'data-science', 'web-dev', 'reactjs', 'javascript', 'android', 'flutter', 'python', 'java', 'cpp', 'uiux'];
 
 export async function generateStaticParams() {
   return validCourseIds.map((id) => ({
@@ -18,8 +17,8 @@ export async function generateStaticParams() {
 
 export function generateMetadata() {
   return {
-    title: 'CredPath Course | EdTech Platform',
-    description: 'Learn with industry experts. Hands-on projects, real-world tasks, and recognized certification.',
+    title: 'CredPath Course | Task-Based Internship',
+    description: 'Complete real-world tasks and earn your certificate. Task-based internship program.',
   };
 }
 
@@ -31,9 +30,8 @@ export default async function CoursePage({ params }: CoursePageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-[var(--bg-primary)]">
+    <main className="h-screen overflow-hidden bg-[var(--bg-primary)]">
       <CourseDetail id={id} title="" icon="" />
-      <Footer />
     </main>
   );
 }

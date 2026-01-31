@@ -2,115 +2,108 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { RiArrowRightLine, RiShiningLine } from 'react-icons/ri';
+import Image from 'next/image';
+import { RiArrowRightLine } from 'react-icons/ri';
 
 const Hero = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.15,
-      },
-    },
-  };
-
   const itemVariants = {
-    hidden: { opacity: 0, y: 25 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7, ease: 'easeOut' },
-    },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
   return (
-    <section className="w-full min-h-screen bg-[var(--bg-primary)] pt-28 pb-20 px-4 sm:px-6 lg:px-8">
-      <div className="w-full max-w-7xl mx-auto">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="w-full"
-        >
-          {/* Badge */}
-          <motion.div variants={itemVariants} className="flex justify-center mb-8">
-            <div className="badge-accent gap-2 px-4 py-2">
-              <RiShiningLine className="w-4 h-4 flex-shrink-0" />
-              <span className="text-sm">Industry-Recognized Certifications</span>
-            </div>
-          </motion.div>
-
-          {/* Main Headline */}
-          <motion.div variants={itemVariants} className="w-full text-center mb-10 md:mb-12">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight text-[var(--text-primary)]">
+    <section className="w-full bg-[var(--bg-primary)] page-hero">
+      <div className="max-container">
+        {/* Two Column Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center mb-8 sm:mb-12">
+          {/* Left - Text Content */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+            className="order-2 lg:order-1 text-center lg:text-left"
+          >
+            {/* Main Headline */}
+            <motion.h1
+              variants={itemVariants}
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight mb-3 sm:mb-4"
+            >
               Build Your{' '}
               <span className="text-[var(--accent-primary)]">Engineering Career</span>
-              {' '}with Certified Learning
-            </h1>
+            </motion.h1>
+
+            {/* Subheading */}
+            <motion.p variants={itemVariants} className="text-sm sm:text-base md:text-lg text-[var(--text-secondary)] mb-5 sm:mb-6 max-w-md mx-auto lg:mx-0">
+              Master skills through real-world projects, expert mentorship, and industry certifications.
+            </motion.p>
+
+            {/* CTA Buttons */}
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+              <Link href="/courses">
+                <motion.button
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="btn-primary w-full sm:w-auto flex items-center justify-center gap-2"
+                >
+                  Explore Courses
+                  <RiArrowRightLine className="w-4 h-4" />
+                </motion.button>
+              </Link>
+              <Link href="/mentorship">
+                <motion.button
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="btn-outline w-full sm:w-auto"
+                >
+                  Find a Mentor
+                </motion.button>
+              </Link>
+            </motion.div>
           </motion.div>
 
-          {/* Subheading */}
-          <motion.div variants={itemVariants} className="w-full max-w-2xl mx-auto text-center mb-12">
-            <p className="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed">
-              Master industry-relevant skills through real-world projects, expert mentorship, and recognized certifications designed to launch your tech career.
-            </p>
+          {/* Right - Illustration */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="order-1 lg:order-2 hidden sm:block"
+          >
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              className="illustration-container"
+            >
+              <Image
+                src="/illustrations/learning.svg"
+                alt="Engineering Learning"
+                fill
+                className="object-contain"
+                priority
+              />
+            </motion.div>
           </motion.div>
+        </div>
 
-          {/* Key Highlights */}
-          <motion.div variants={itemVariants} className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-14">
-            {[
-              { title: 'Real-World Projects', desc: 'Build practical solutions' },
-              { title: 'Expert Guidance', desc: 'Learn from industry pros' },
-              { title: 'Verified Credentials', desc: 'Recognized by companies' },
-            ].map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center p-6 rounded-lg bg-[var(--bg-secondary)] hover:shadow-md transition-shadow duration-300">
-                <h4 className="text-base sm:text-lg font-semibold text-[var(--text-primary)] mb-2">{item.title}</h4>
-                <p className="text-sm sm:text-base text-[var(--text-secondary)]">{item.desc}</p>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* CTA Buttons */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 md:mb-20">
-            <Link href="/courses">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary px-8 py-3.5 text-base font-medium flex items-center gap-2 whitespace-nowrap"
-              >
-                <span>Explore Learning Paths</span>
-                <RiArrowRightLine className="w-5 h-5" />
-              </motion.button>
-            </Link>
-            <Link href="/mentorship">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-outline px-8 py-3.5 text-base font-medium whitespace-nowrap"
-              >
-                Connect with Mentors
-              </motion.button>
-            </Link>
-          </motion.div>
-
-          {/* Stats Section */}
-          <motion.div variants={itemVariants} className="w-full border-t border-b border-[var(--border-color)] py-12">
-            <div className="grid grid-cols-3 gap-6 md:gap-12">
-              {[
-                { number: '50+', label: 'Certification Paths', subtext: 'covering all domains' },
-                { number: '200+', label: 'Expert Mentors', subtext: 'from top tech companies' },
-                { number: '10K+', label: 'Active Learners', subtext: 'worldwide community' },
-              ].map((stat, idx) => (
-                <div key={idx} className="text-center">
-                  <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--accent-primary)] mb-1">{stat.number}</div>
-                  <div className="text-sm sm:text-base font-semibold text-[var(--text-primary)] mb-1">{stat.label}</div>
-                  <div className="text-xs sm:text-sm text-[var(--text-secondary)]">{stat.subtext}</div>
-                </div>
-              ))}
+        {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="grid grid-cols-3 gap-3 sm:gap-4"
+        >
+          {[
+            { number: '50+', label: 'Paths' },
+            { number: '200+', label: 'Mentors' },
+            { number: '10K+', label: 'Learners' },
+          ].map((stat, idx) => (
+            <div
+              key={idx}
+              className="p-3 sm:p-4 rounded-lg bg-[var(--bg-secondary)] border border-[var(--border-color)] text-center"
+            >
+              <div className="stat-number">{stat.number}</div>
+              <div className="stat-label">{stat.label}</div>
             </div>
-          </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

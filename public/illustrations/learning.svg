@@ -1,0 +1,61 @@
+<svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <circle cx="200" cy="150" r="120" fill="#3b82f6" fill-opacity="0.05"/>
+  <circle cx="200" cy="150" r="80" fill="#3b82f6" fill-opacity="0.08"/>
+  
+  <!-- Laptop Base -->
+  <rect x="100" y="140" width="200" height="120" rx="8" fill="#1e293b"/>
+  <rect x="110" y="150" width="180" height="100" rx="4" fill="#0f172a"/>
+  
+  <!-- Screen Content - Code Lines -->
+  <rect x="120" y="160" width="80" height="6" rx="3" fill="#3b82f6"/>
+  <rect x="120" y="172" width="120" height="6" rx="3" fill="#3b82f6" fill-opacity="0.6"/>
+  <rect x="120" y="184" width="60" height="6" rx="3" fill="#10b981"/>
+  <rect x="120" y="196" width="100" height="6" rx="3" fill="#3b82f6" fill-opacity="0.4"/>
+  <rect x="120" y="208" width="140" height="6" rx="3" fill="#f59e0b"/>
+  <rect x="120" y="220" width="90" height="6" rx="3" fill="#3b82f6" fill-opacity="0.5"/>
+  <rect x="120" y="232" width="110" height="6" rx="3" fill="#10b981" fill-opacity="0.7"/>
+  
+  <!-- Keyboard -->
+  <rect x="100" y="260" width="200" height="8" rx="2" fill="#334155"/>
+  
+  <!-- Floating Elements - Books -->
+  <g transform="translate(320, 80)">
+    <rect x="0" y="0" width="50" height="60" rx="4" fill="#3b82f6"/>
+    <rect x="5" y="5" width="40" height="50" rx="2" fill="#60a5fa"/>
+    <rect x="10" y="15" width="30" height="4" rx="2" fill="white" fill-opacity="0.8"/>
+    <rect x="10" y="23" width="25" height="3" rx="1.5" fill="white" fill-opacity="0.5"/>
+    <rect x="10" y="30" width="20" height="3" rx="1.5" fill="white" fill-opacity="0.5"/>
+  </g>
+  
+  <!-- Floating Elements - Certificate -->
+  <g transform="translate(30, 60)">
+    <rect x="0" y="0" width="60" height="45" rx="4" fill="#f8fafc" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="10" y="10" width="40" height="4" rx="2" fill="#3b82f6"/>
+    <rect x="15" y="20" width="30" height="3" rx="1.5" fill="#64748b"/>
+    <rect x="15" y="27" width="25" height="3" rx="1.5" fill="#64748b"/>
+    <circle cx="45" cy="35" r="6" fill="#10b981"/>
+    <path d="M42 35 L44 37 L48 33" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Floating Code Brackets -->
+  <g transform="translate(340, 180)">
+    <text x="0" y="0" fill="#3b82f6" font-size="40" font-family="monospace" font-weight="bold">&lt;/&gt;</text>
+  </g>
+  
+  <!-- Floating Dots -->
+  <circle cx="80" cy="180" r="4" fill="#3b82f6" fill-opacity="0.5"/>
+  <circle cx="60" cy="200" r="3" fill="#10b981" fill-opacity="0.5"/>
+  <circle cx="340" cy="240" r="5" fill="#f59e0b" fill-opacity="0.5"/>
+  <circle cx="360" cy="260" r="3" fill="#3b82f6" fill-opacity="0.5"/>
+  
+  <!-- Progress Bar -->
+  <g transform="translate(50, 250)">
+    <rect x="0" y="0" width="80" height="8" rx="4" fill="#e2e8f0"/>
+    <rect x="0" y="0" width="60" height="8" rx="4" fill="#3b82f6"/>
+  </g>
+  
+  <!-- Stars -->
+  <path d="M330 50 L332 56 L338 56 L333 60 L335 66 L330 62 L325 66 L327 60 L322 56 L328 56 Z" fill="#f59e0b"/>
+  <path d="M50 140 L51 144 L55 144 L52 147 L53 151 L50 148 L47 151 L48 147 L45 144 L49 144 Z" fill="#f59e0b" fill-opacity="0.7"/>
+</svg>

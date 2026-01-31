@@ -1,4 +1,3 @@
-import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import HowItWorks from '@/components/HowItWorks'
 import Testimonials from '@/components/Testimonials'
@@ -10,16 +9,11 @@ export const metadata = {
 
 export default function HowItWorksPage() {
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-950">
-      <Navbar />
-      <div className="pt-24 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 text-gray-900 dark:text-white">
-            How <span className="gradient-text">CredPath</span> Works
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            A transparent, step-by-step guide to achieving your engineering career goals.
-          </p>
+    <main className="min-h-screen bg-[var(--bg-primary)]">
+      <div className="page-hero">
+        <div className="max-container text-center">
+          <h1 className="page-title">How <span className="text-[var(--accent-primary)]">CredPath</span> Works</h1>
+          <p className="page-desc mx-auto max-w-lg">A step-by-step guide to your engineering career.</p>
         </div>
       </div>
       <HowItWorks />

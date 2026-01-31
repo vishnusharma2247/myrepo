@@ -1,118 +1,98 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { RiStarFill } from 'react-icons/ri';
+import { RiStarFill, RiDoubleQuotesL } from 'react-icons/ri';
 
 const testimonials = [
-  {
-    name: 'Alex Johnson',
-    path: 'Cloud Computing',
-    company: 'Amazon',
-    quote:
-      'CredPath transformed my career completely. The hands-on projects and expert mentorship gave me the confidence to land a senior engineer role at Amazon with a 40% salary increase.',
+  { 
+    name: 'Alex Johnson', 
+    role: 'Senior Cloud Engineer',
+    path: 'Cloud Computing', 
+    company: 'Amazon', 
+    quote: 'The task-based approach was exactly what I needed. Instead of just watching videos, I was actually building real infrastructure. Landed a senior role at AWS with a 40% salary increase.', 
     initials: 'AJ',
-    rating: 5,
+    salary: '+40%'
   },
-  {
-    name: 'Maria Garcia',
-    path: 'Machine Learning',
-    company: 'Google',
-    quote:
-      'The industry-grade tasks were incredibly challenging and rewarding. Within 3 months of completing the ML path, I secured my dream role as an ML Engineer at Google.',
+  { 
+    name: 'Maria Garcia', 
+    role: 'ML Engineer',
+    path: 'Machine Learning', 
+    company: 'Google', 
+    quote: 'CredPath helped me transition from data analyst to ML Engineer. The mentorship was incredible - my mentor reviewed every project and gave detailed feedback.', 
     initials: 'MG',
-    rating: 5,
+    salary: '+55%'
   },
-  {
-    name: 'Rajesh Kumar',
-    path: 'DevOps Engineering',
-    company: 'Microsoft',
-    quote:
-      'The mentor network at CredPath is unmatched. My mentor provided invaluable guidance throughout and helped me transition into DevOps at Microsoft.',
+  { 
+    name: 'Rajesh Kumar', 
+    role: 'DevOps Lead',
+    path: 'DevOps Engineering', 
+    company: 'Microsoft', 
+    quote: 'Coming from a traditional IT background, the hands-on tasks and direct mentor access made all the difference. Now leading a DevOps team of 8 at Microsoft.', 
     initials: 'RK',
-    rating: 5,
-  },
-  {
-    name: 'Sarah Chen',
-    path: 'AI & Deep Learning',
-    company: 'OpenAI',
-    quote:
-      'The structured learning path and hands-on AI projects gave me the edge I needed. Now I work on cutting-edge AI projects at OpenAI.',
-    initials: 'SC',
-    rating: 5,
-  },
-  {
-    name: 'Michael O\'Brien',
-    path: 'IoT Systems',
-    company: 'Tesla',
-    quote: 'CredPath made complex IoT concepts accessible and practical. The certification became a key highlight on my resume when I joined Tesla.',
-    initials: 'MO',
-    rating: 5,
-  },
-  {
-    name: 'Priya Patel',
-    path: 'Cryptography',
-    company: 'Meta',
-    quote:
-      'The security-focused curriculum and real-world challenges prepared me perfectly. I landed my role at Meta as a Security Engineer right after completion.',
-    initials: 'PP',
-    rating: 5,
+    salary: '+65%'
   },
 ];
 
 const Testimonials = () => {
   return (
-    <section className="w-full py-20 md:py-28 bg-[var(--bg-secondary)] px-4 sm:px-6 lg:px-8">
-      <div className="w-full max-w-7xl mx-auto">
-        {/* Header */}
+    <section className="section-spacing bg-[var(--bg-secondary)] px-4 sm:px-6 lg:px-8">
+      <div className="max-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: '-100px' }}
-          className="text-center mb-16 md:mb-20"
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center section-header"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[var(--text-primary)] mb-5">
-            Success Stories
-          </h2>
-          <p className="text-lg sm:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
-            Real transformations from engineers who've launched their careers with CredPath
-          </p>
+          <h2 className="section-title">Success Stories</h2>
+          <p className="section-desc mx-auto">Real engineers who transformed their careers</p>
         </motion.div>
 
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {testimonials.map((testimonial, idx) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {testimonials.map((t, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.08, duration: 0.6 }}
-              viewport={{ once: true, margin: '-100px' }}
+              transition={{ delay: idx * 0.1, duration: 0.4 }}
+              viewport={{ once: true }}
+              className="card-standard flex flex-col"
             >
-              <div className="h-full p-7 md:p-8 rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-color)] hover:border-[var(--accent-primary)] hover:shadow-lg transition-all duration-300 flex flex-col">
-                {/* Stars */}
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <RiStarFill key={i} className="w-5 h-5 text-yellow-500" />
+              {/* Quote Icon & Stars */}
+              <div className="flex items-center justify-between mb-3 sm:mb-4">
+                <RiDoubleQuotesL className="w-6 h-6 sm:w-8 sm:h-8 text-[var(--accent-primary)] opacity-30" />
+                <div className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <RiStarFill key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-500" />
                   ))}
                 </div>
+              </div>
 
-                {/* Quote */}
-                <p className="text-base text-[var(--text-secondary)] leading-relaxed mb-6 flex-grow italic">
-                  "{testimonial.quote}"
-                </p>
+              {/* Quote */}
+              <p className="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed mb-4 sm:mb-6 flex-grow line-clamp-4 sm:line-clamp-none">
+                &ldquo;{t.quote}&rdquo;
+              </p>
 
-                {/* Author Info */}
-                <div className="flex items-center gap-3 pt-4 border-t border-[var(--border-color)]">
-                  <div className="w-12 h-12 rounded-full bg-[var(--accent-primary)]/10 flex items-center justify-center flex-shrink-0">
-                    <span className="font-bold text-[var(--accent-primary)]">{testimonial.initials}</span>
-                  </div>
-                  <div className="min-w-0">
-                    <p className="font-semibold text-[var(--text-primary)] text-sm">{testimonial.name}</p>
-                    <p className="text-xs text-[var(--accent-primary)]">{testimonial.path}</p>
-                    <p className="text-xs text-[var(--text-secondary)]">at {testimonial.company}</p>
-                  </div>
+              {/* Author Info */}
+              <div className="flex items-center gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-[var(--border-color)]">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-white text-xs sm:text-sm font-semibold flex-shrink-0" style={{ backgroundColor: 'var(--accent-primary)' }}>
+                  {t.initials}
                 </div>
+                <div className="flex-grow min-w-0">
+                  <p className="text-xs sm:text-sm font-semibold text-[var(--text-primary)] truncate">{t.name}</p>
+                  <p className="text-xs text-[var(--text-secondary)] truncate">{t.role} at {t.company}</p>
+                </div>
+                <div className="text-right flex-shrink-0">
+                  <div className="text-base sm:text-lg font-bold text-green-500">{t.salary}</div>
+                  <div className="text-xs text-[var(--text-muted)]">Salary</div>
+                </div>
+              </div>
+
+              {/* Path Badge */}
+              <div className="mt-3 sm:mt-4">
+                <span className="px-2 sm:px-3 py-1 text-xs font-medium rounded-full bg-[var(--bg-secondary)] text-[var(--accent-primary)] border border-[var(--border-color)]">
+                  {t.path}
+                </span>
               </div>
             </motion.div>
           ))}
