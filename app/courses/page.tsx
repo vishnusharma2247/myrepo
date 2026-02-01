@@ -2,8 +2,6 @@
 
 import Footer from '@/components/Footer';
 import CoursesSection from '@/components/CoursesSection';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
 
 export default function CoursesPage() {
   return (
